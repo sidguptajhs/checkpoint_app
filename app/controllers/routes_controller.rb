@@ -1,10 +1,10 @@
 class RoutesController < ApplicationController
-  
-  def show            
+
+  def show
         render json: '{
  "stations": [{
    "name": "London",
-   "nlc": "1",
+   "nlc": "100",
    "coordinates": {
      "latitude": "51.5073510",
      "longitude": "-0.1277580"
@@ -12,7 +12,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "London Euston Rail Station",
-   "nlc": "2",
+   "nlc": "20000",
    "coordinates": {
      "latitude": "51.5290340",
      "longitude": "-0.1346760"
@@ -20,7 +20,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Watford Junction Rail Station",
-   "nlc": "3",
+   "nlc": "300",
    "coordinates": {
      "latitude": "51.6637730",
      "longitude": "-0.3968900"
@@ -28,7 +28,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Coventry Rail Station",
-   "nlc": "4",
+   "nlc": "400",
    "coordinates": {
      "latitude": "52.4011300",
      "longitude": "-1.5135670"
@@ -36,7 +36,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Birmingham New Street Rail Station",
-   "nlc": "5",
+   "nlc": "500",
    "coordinates": {
      "latitude": "52.4083670",
      "longitude": "-1.9635510"
@@ -44,7 +44,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Sandwell & Dudley Rail Station",
-   "nlc": "6",
+   "nlc": "600",
    "coordinates": {
      "latitude": "52.5086700",
      "longitude": "-2.0115900"
@@ -52,7 +52,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Wolverhampton Rail Station",
-   "nlc": "6\7",
+   "nlc": "700",
    "coordinates": {
      "latitude": "52.5237580",
      "longitude": "-2.0492960"
@@ -60,7 +60,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Stafford Rail Station",
-   "nlc": "7",
+   "nlc": "800",
    "coordinates": {
      "latitude": "52.8039050",
      "longitude": "-2.1220170"
@@ -68,7 +68,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": " Stoke-on-Trent Rail Station",
-   "nlc": "9",
+   "nlc": "900",
    "coordinates": {
      "latitude": "53.0869600",
      "longitude": "-2.2432950"
@@ -76,7 +76,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Macclesfield Rail Station",
-   "nlc": "10",
+   "nlc": "1000",
    "coordinates": {
      "latitude": "52.2593310",
      "longitude": "-2.1222040"
@@ -84,7 +84,7 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Stockport Rail Station",
-   "nlc": "11",
+   "nlc": "1100",
    "coordinates": {
      "latitude": "53.4058860",
      "longitude": "-2.1629980"
@@ -92,15 +92,13 @@ class RoutesController < ApplicationController
  },
  {
    "name": "Manchester Piccadilly Rail Station",
-   "nlc": "12",
+   "nlc": "1200",
    "coordinates": {
      "latitude": "53.4777790",
      "longitude": "-2.2319190"
    }
- }
- ]
-}
-'
+ }]
+}'
   end
 
 end
