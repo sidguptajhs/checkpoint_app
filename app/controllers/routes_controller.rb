@@ -8,8 +8,8 @@ class RoutesController < ApplicationController
    "nlc": "100",
    "isArrived": false,
    "coordinates": {
-     "latitude": "12.9287304",
-     "longitude": "77.6289364"
+     "latitude": "1",
+     "longitude": "1"
    }
  },
  {
@@ -17,8 +17,8 @@ class RoutesController < ApplicationController
    "nlc": "20000",
    "isArrived": false,
    "coordinates": {
-     "latitude": "12.928588",
-     "longitude": "77.628955"
+     "latitude": "2",
+     "longitude": "2"
    }
  },
  {
@@ -26,8 +26,8 @@ class RoutesController < ApplicationController
    "nlc": "300",
    "isArrived": false,
    "coordinates": {
-     "latitude": "12.92845783",
-     "longitude": "77.62893352"
+     "latitude": "3",
+     "longitude": "3"
    }
  },
  {
@@ -35,8 +35,8 @@ class RoutesController < ApplicationController
    "nlc": "400",
    "isArrived": false,
    "coordinates": {
-     "latitude": "12.928716",
-     "longitude": "77.6289"
+     "latitude": "4",
+     "longitude": "4"
    }
  }]
 }'

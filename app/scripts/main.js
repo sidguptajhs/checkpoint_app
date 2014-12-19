@@ -9,19 +9,40 @@ jQuery(document).ready(function() {
     }
   });
   var stationsListBoundView = null;
-  var allStations = null;
+  var allStations = {
+    stations: []
+  };
+  var fakeLocations = [{
+    latitude: 1,
+    longitude: 1
+  }, {
+    latitude: 2,
+    longitude: 2
+  }, {
+    latitude: 3,
+    longitude: 3
+  }, {
+    latitude: 4,
+    longitude: 4
+  }];
+  var fakeLocationIndex = 0;
 
   var geolocationWatcherSuccess = function(position) {
     console.log("Got position", { position: position });
 
-    var location = getResult(position.coords.latitude, position.coords.longitude, allStations);
+    fakeLocationsIndex++;
 
-    if(location === -1) {
-      location=allStations.length;
+    position.coords.latitude = fakeLocations[fakeLocationsIndex].latitude;
+    position.coords.longitude = fakeLocations[fakeLocationsIndex].longitude;
+
+    var location = getResult(position.coords.latitude, position.coords.longitude, allStations.stations);
+
+    if(location === -1 || fakeLocationsIndex >= fakeLocations.length) {
+      location=allStations.stations.length;
     }
 
     for(var i = 0; i<location; i++) {
-      allStations[i].isArrived = true;
+      allStations.stations[i].isArrived = true;
     }
 
     currentLocationBoundView.update(position);
@@ -53,7 +74,7 @@ jQuery(document).ready(function() {
 
     stationSearchPromise.done(function(data) {
       console.log("stationSearchPromise:done", { data: data });
-      allStations = data.stations;
+      allStations.stations = data.stations;
       stationsListBoundView = rivets.bind(jQuery("[data-js='stations-list']"), allStations);
       jQuery.mobile.navigate("#checkpointapp-page-list");
 
