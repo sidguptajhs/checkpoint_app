@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Checkpointapp</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div data-role="page" id="checkpointapp-page-search">
+      <div data-role="header">
+        <h1>Checkpoint app</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+        <h2>Where are you traveling today?</h2>
+        <form action="">
+          <label for="text-basic">From:</label>
+          <input data-js="form-search-stations-from" type="text" name="station-from" id="station-from" value="" />
+
+          <label for="text-basic">To:</label>
+          <input data-js="form-search-stations-to" type="text" name="station-to" id="station-to" value="" />
+
+          <button data-js="form-search-stations-submit" class="ui-btn">Get checkpoints</button>
+        </form>
+
+        <!-- <h3>Show internal pages:</h3>
+        <p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
+        <p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p> -->
+      </div><!-- /content -->
+
+      <div data-role="footer" data-theme="a">
+        <h4>&copy; TheTrainline.com</h4>
+      </div><!-- /footer -->
+    </div><!-- /page one -->
+
+    <!-- Start of second page: #two -->
+    <div data-role="page" id="checkpointapp-page-list">
+
+      <div data-role="header">
+        <h1>Checkpoint app</h1>
+      </div><!-- /header -->
+
+      <div role="main" class="ui-content">
+
+        <p data-js="currentLocation">
+          You are here: <span>{coords.latitude}, {coords.longitude}</span>
+        </p>
+
+        <ul data-role="listview" data-inset="true" data-js="stations-list">
+          <li rv-each-station="stations" class="station-wrapper">
+            <div rv-class-arrived="station.isArrived" class="station">
+              <h2>{station.name}</h2>
+              <p>{station.nlc}</p>
+              <p><small>({station.coordinates.latitude}, {station.coordinates.longitude})</small></p>
+            </div>
+          </li>
+        </ul>
+
+
+
+
+
+
+      </div><!-- /content -->
+
+      <div data-role="footer" data-theme="a">
+        <h4>&copy; TheTrainline.com</h4>
+      </div><!-- /footer -->
+    </div><!-- /page two -->
+
+
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/rivets/0.7.1/rivets.bundled.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/part2.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

@@ -42,4 +42,8 @@ class RoutesController < ApplicationController
 }'
   end
 
+  def index
+  render :file => 'public/index.html'
+end
+
 end
