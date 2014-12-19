@@ -1,8 +1,7 @@
 class RoutesController < ApplicationController
 
   def show
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    render json: '{
+        render json: '{
  "stations": [{
    "name": "London",
    "nlc": "100",
