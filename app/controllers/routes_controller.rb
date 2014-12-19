@@ -16,7 +16,7 @@ class RoutesController < ApplicationController
    "nlc": "20000",
    "isArrivedTheme": "b",
    "coordinates": {
-     "latitude": "51.5290340", // Curr LAt 51.6224234, 61.6224234
+     "latitude": "51.5290340",
      "longitude": "-0.1346760"
    }
  },
