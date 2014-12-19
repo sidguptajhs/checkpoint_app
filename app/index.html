@@ -62,12 +62,15 @@
 
       <div role="main" class="ui-content">
 
+        <p data-js="currentLocation">
+          You are here: <span>{coords.latitude}, {coords.longitude}</span>
+        </p>
 
         <ul data-role="listview" data-inset="true" data-js="stations-list">
-          <li rv-each-station="stations">
-              <h2>{station.name}</h2>
-              <p>{station.nlc}</p>
-              <p><small>({station.coordinates.latitude}, {station.coordinates.longitude})</small></p>
+          <li rv-each-station="stations" rv-data-theme="{station.isArrivedTheme}">
+            <h2>{station.name}</h2>
+            <p>{station.nlc}</p>
+            <p><small>({station.coordinates.latitude}, {station.coordinates.longitude})</small></p>
           </li>
         </ul>
 
