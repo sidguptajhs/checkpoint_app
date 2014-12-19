@@ -67,7 +67,7 @@
         </p>
 
         <ul data-role="listview" data-inset="true" data-js="stations-list">
-          <li rv-each-station="stations" rv-data-theme="{station.isArrivedTheme}">
+          <li rv-each-station="stations" rv-class-arrived="{station.isArrived}">
             <h2>{station.name}</h2>
             <p>{station.nlc}</p>
             <p><small>({station.coordinates.latitude}, {station.coordinates.longitude})</small></p>
