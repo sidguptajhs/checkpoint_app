@@ -67,10 +67,12 @@
         </p>
 
         <ul data-role="listview" data-inset="true" data-js="stations-list">
-          <li rv-each-station="stations" rv-class-arrived="{station.isArrived}">
-            <h2>{station.name}</h2>
-            <p>{station.nlc}</p>
-            <p><small>({station.coordinates.latitude}, {station.coordinates.longitude})</small></p>
+          <li rv-each-station="stations" class="station-wrapper">
+            <div rv-class-arrived="station.isArrived" class="station">
+              <h2>{station.name}</h2>
+              <p>{station.nlc}</p>
+              <p><small>({station.coordinates.latitude}, {station.coordinates.longitude})</small></p>
+            </div>
           </li>
         </ul>
 
