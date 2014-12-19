@@ -9,9 +9,20 @@ jQuery(document).ready(function() {
     }
   });
   var stationsListBoundView = null;
+  var allStations = null;
 
   var geolocationWatcherSuccess = function(position) {
     console.log("Got position", { position: position });
+
+    var location = getResult(position.coords.latitude, position.coords.longitude, allStations);
+
+    if(location === -1) {
+      location=allStations.length;
+    }
+
+    for(var i = 0; i<location; i++) {
+      allStations[i].isArrived = true;
+    }
 
     currentLocationBoundView.update(position);
   };
@@ -42,7 +53,8 @@ jQuery(document).ready(function() {
 
     stationSearchPromise.done(function(data) {
       console.log("stationSearchPromise:done", { data: data });
-      stationsListBoundView = rivets.bind(jQuery("[data-js='stations-list']"), data);
+      allStations = data.stations;
+      stationsListBoundView = rivets.bind(jQuery("[data-js='stations-list']"), allStations);
       jQuery.mobile.navigate("#checkpointapp-page-list");
 
       var geolocationWatcher = null;
